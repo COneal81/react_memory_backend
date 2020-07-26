@@ -5,7 +5,7 @@ class CreateMemories < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :date
       t.string :image_url
-      t.references :category_id, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end
