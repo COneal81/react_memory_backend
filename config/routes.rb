@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :memories, only: [:index, :create]
       resources :categories, only: [:index]
+      resources :users, only: [:create]
+      post '/login', to: 'auth#create'
     end
   end
 end
