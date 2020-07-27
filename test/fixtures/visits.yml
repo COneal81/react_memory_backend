@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  visit_description: MyText
+  date: 2020-07-27 15:27:14
+  user: one
+  caregiver: one
+
+two:
+  visit_description: MyText
+  date: 2020-07-27 15:27:14
+  user: two
+  caregiver: two

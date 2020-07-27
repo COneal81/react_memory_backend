@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_175619) do
+ActiveRecord::Schema.define(version: 2020_07_27_212106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_175619) do
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_memories_on_category_id"
     t.index ["user_id"], name: "index_memories_on_user_id"
   end
@@ -52,6 +52,19 @@ ActiveRecord::Schema.define(version: 2020_07_27_175619) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "visits", force: :cascade do |t|
+    t.text "visit_description"
+    t.datetime "visit_date"
+    t.bigint "user_id"
+    t.bigint "caregiver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["caregiver_id"], name: "index_visits_on_caregiver_id"
+    t.index ["user_id"], name: "index_visits_on_user_id"
+  end
+
   add_foreign_key "memories", "categories"
   add_foreign_key "memories", "users"
+  add_foreign_key "visits", "caregivers"
+  add_foreign_key "visits", "users"
 end
