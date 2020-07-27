@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_26_152000) do
+ActiveRecord::Schema.define(version: 2020_07_27_153430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,20 @@ ActiveRecord::Schema.define(version: 2020_07_26_152000) do
     t.bigint "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
     t.index ["category_id"], name: "index_memories_on_category_id"
+    t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "user_email"
+    t.string "password_digest"
+    t.string "family_member_email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "memories", "categories"
+  add_foreign_key "memories", "users"
 end
