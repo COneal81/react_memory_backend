@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_153430) do
+ActiveRecord::Schema.define(version: 2020_07_27_175619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "caregivers", force: :cascade do |t|
+    t.string "caregiver_name"
+    t.string "employee_number"
+    t.string "company_name"
+    t.string "caregiver_email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"

@@ -31,3 +31,7 @@ Memory.create(title: "Gardening", description: "At your home on Park Road in Oak
     and maaintaining it.  This is also where your son Bill was married to Hollie.", date: "1975 - 1998", image_url: 
     "https://en.wikipedia.org/wiki/Dutch_garden#/media/File:Dutch_Garden_P6110062.JPG", category_id: hobbies.id, user_id: oma.id)
 
+# Caregiver
+becky = Caregiver.create(caregiver_name: "Becky", employee_number: "BT111A", company_name: "Forever Young", caregiver_email: "becky@becky.com")
+sam = Caregiver.create(caregiver_name: "Sam", employee_number: "SJ111A", company_name: "Kind Smiles", caregiver_email: "sam@sam.com")
+
