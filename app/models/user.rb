@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     has_many :memories
-    # has_many :visits
-    # has_many :caregivers, through: :visits
+    has_many :visits
+    has_many :caregivers, through: :visits
 
 
     has_secure_password
