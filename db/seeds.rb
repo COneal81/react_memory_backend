@@ -9,8 +9,8 @@ Category.destroy_all
 Memory.destroy_all
 
 # User 
-doug = User.create(name: "Doug", user_email: "doug@doug.com", password_digest: "doug", family_member_email: "karioneal@yahoo.com")
-oma = User.create(name: "Francine", user_email: "oma@oma.com", password_digest: "oma", family_member_email: 'triadfirewood@gmail.com')
+doug = User.create(name: "Doug", user_email: "doug@doug.com", password: "doug1234", family_member_email: "karioneal@yahoo.com")
+oma = User.create(name: "Francine", user_email: "oma@oma.com", password: "oma12345", family_member_email: 'triadfirewood@gmail.com')
 
 
 # Category
